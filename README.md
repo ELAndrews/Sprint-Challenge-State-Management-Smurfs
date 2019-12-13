@@ -23,10 +23,27 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+  - When creating larger and more complex applications, with multiple components, you are likely to be required to access slices of state at multiple locations. Typically it is required that we pass state down via props, conext API solves this issue by creating a Provider of state and Consumer of state where required.
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+  - Actions - actions are objects which provide, at the very least, an action type. They are how we send information from our application to the store. These are fed to action creators (the function) which are then combined into specialist reducers.
+  - Reducers - is a function that take state and return a new state. They are deterministic and never mutate the original state. It takes different action types and returns the required outcome for that action type.
+  - Store - a store or redux store is where we hold the slices of state for our application and takes the argument of the combinedReducer to enable use to change the slice of state within it.
+
+* [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+  - Component state is local to the component itself. I can be used within other child components, however this can be cumbersome, where this occurs Application state is advised.
+  - Application State is a global state object. It is a slice of state which may be required in multiple locations. Using Application state removes the requirement to pass state as props. We can us context API or redux to perform application state.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+  - Redux-thunk is a middleware redux library. Thunk allows us to write action creators which return functions instead/as well as an action type with payload. This enables asynchronous code: allowing delays, axios requests, or wait for specific conditions to be met (useEffect calls).
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+  - Redux. At the beginning of the week I would have said context api, however after yesterday’s project I was able to get to grips with Redux a little more and started to appreciate its versatility, especially with the introduction of thunk to enable async coding. Though there are multiple steps which must be performed correctly, I believe that it enables for a more sophisticated application.
 
 ## Project Set Up
 
