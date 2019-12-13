@@ -6,11 +6,13 @@ export default function SmurfCard(props) {
     props.getSmurfs();
   };
   return (
-    <div>
-      <h4>{props.curr.name}</h4>
-      <p>{props.curr.age}</p>
-      <p>{props.curr.height}</p>
-      <button onClick={handleClick}>{`\u2296`}</button>
+    <div className="smurfCard">
+      <h4 className="smurfName">{props.curr.name}</h4>
+      <div className="smurfInfo">
+        <p>{props.curr.age}</p>
+        <p>{props.curr.height}</p>
+        <button onClick={handleClick} className="deleteBtn">{`\u2296`}</button>
+      </div>
     </div>
   );
 }

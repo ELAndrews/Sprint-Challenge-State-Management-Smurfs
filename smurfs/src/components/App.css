@@ -1,28 +1,91 @@
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background: url("https://images.pexels.com/photos/757292/pexels-photo-757292.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.headerContainer {
+  width: 100%;
+  background-color: #62cdfd;
+  padding: 10px;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.formContainer {
+  width: 70%;
+  max-width: 300px;
+  background-color: white;
+  color: #62cdfd;
+  margin: 20px auto 50px;
+  padding: 10px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
 }
 
-.App-intro {
-  font-size: large;
+.formInput {
+  margin: 5px;
+  border: none;
+  border-bottom: 2px solid #62cdfd;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.formSubmit {
+  width: 100px;
+  padding: 5px 0px;
+  border-radius: 10px;
+  margin: 0px auto;
+  background-color: #62cdfd;
+  color: white;
+  border: 1px solid #62cdfd;
+}
+
+.formSubmit:hover {
+  width: 100px;
+  padding: 5px 0px;
+  border-radius: 10px;
+  margin: 0px auto;
+  background-color: white;
+  color: #62cdfd;
+}
+
+.smurfContainer {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px auto;
+  justify-content: space-evenly;
+}
+
+.smurfCard {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 10px auto;
+  background-color: white;
+  color: #62cdfd;
+  border: 1px solid #62cdfd;
+  line-height: 0.6;
+}
+
+.smurfName {
+  background-color: #62cdfd;
+  color: white;
+  padding: 20px 0px;
+  position: relative;
+  bottom: 28px;
+  border-radius: 10px 10px 0px 0px;
+  border: 2px solid #62cdfd;
+}
+
+.smurfInfo {
+  position: relative;
+  bottom: 30px;
+}
+
+.deleteBtn {
+  color: #62cdfd;
+  font-size: 1.6rem;
+  border: none;
 }

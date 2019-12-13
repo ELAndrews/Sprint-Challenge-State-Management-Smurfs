@@ -24,7 +24,7 @@ export function Form({ form, inputChange, submit, updateSmurfs, getSmurfs }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="formContainer" onSubmit={handleSubmit}>
       <p>Add a new Smurf</p>
       <input
         type="text"
@@ -32,6 +32,7 @@ export function Form({ form, inputChange, submit, updateSmurfs, getSmurfs }) {
         value={form.name}
         placeholder="What shall we call your new smurf?"
         onChange={handleChange}
+        className="formInput"
       />
       <input
         type="text"
@@ -39,6 +40,7 @@ export function Form({ form, inputChange, submit, updateSmurfs, getSmurfs }) {
         value={form.age}
         placeholder="How old is your smurf?"
         onChange={handleChange}
+        className="formInput"
       />
       <input
         type="text"
@@ -46,8 +48,10 @@ export function Form({ form, inputChange, submit, updateSmurfs, getSmurfs }) {
         value={form.height}
         placeholder="How tall is your smurf?"
         onChange={handleChange}
+        className="formInput"
       />
-      <input type="submit" />
+      <br />
+      <input type="submit" className="formSubmit" />
     </form>
   );
 }

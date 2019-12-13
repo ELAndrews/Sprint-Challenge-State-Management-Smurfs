@@ -8,8 +8,7 @@ export function Smurfs({ smurfs, getSmurfs, deleteSmurf }) {
     getSmurfs();
   }, []);
   return (
-    <div>
-      <h3>Lots of Smurfs!</h3>
+    <div className="smurfContainer">
       {smurfs.map((curr, index) => {
         return (
           <div key={index}>
