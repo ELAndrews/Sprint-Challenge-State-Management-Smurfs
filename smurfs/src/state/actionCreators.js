@@ -21,3 +21,14 @@ export const submit = () => {
 export const inputChange = (name, value) => {
   return { type: types.INPUT_CHANGE, payload: { name, value } };
 };
+
+export const updateSmurfs = form => dispatch => {
+  axios
+    .post("http://localhost:3333/smurfs", form)
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+};

@@ -1,14 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
-import { inputChange, submit } from "../state/actionCreators";
+import {
+  inputChange,
+  submit,
+  updateSmurfs,
+  getSmurfs
+} from "../state/actionCreators";
 
-export function Form({ form, inputChange, submit }) {
+export function Form({ form, inputChange, submit, updateSmurfs, getSmurfs }) {
   const handleChange = e => {
     inputChange(e.target.name, e.target.value);
   };
   const handleSubmit = e => {
     e.preventDefault();
     submit();
+    const form = {
+      name: e.target.name.value,
+      age: e.target.age.value,
+      height: e.target.height.value
+    };
+    updateSmurfs(form);
+    getSmurfs();
   };
 
   return (
@@ -35,6 +47,7 @@ export function Form({ form, inputChange, submit }) {
         placeholder="How tall is your smurf?"
         onChange={handleChange}
       />
+      <input type="submit" />
     </form>
   );
 }
@@ -49,4 +62,9 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { inputChange, submit })(Form);
+export default connect(mapStateToProps, {
+  inputChange,
+  submit,
+  updateSmurfs,
+  getSmurfs
+})(Form);
