@@ -32,3 +32,14 @@ export const updateSmurfs = form => dispatch => {
       console.log(error);
     });
 };
+
+export const deleteSmurf = id => dispatch => {
+  axios
+    .delete(`http://localhost:3333/smurfs/${id}`)
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+};

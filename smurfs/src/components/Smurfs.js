@@ -1,20 +1,23 @@
 import React, { useEffect } from "react";
 import SmurfCard from "./SmurfCard";
 import { connect } from "react-redux";
-import { getSmurfs } from "../state/actionCreators";
+import { getSmurfs, deleteSmurf } from "../state/actionCreators";
 
-export function Smurfs({ smurfs, getSmurfs }) {
+export function Smurfs({ smurfs, getSmurfs, deleteSmurf }) {
   useEffect(() => {
     getSmurfs();
   }, []);
-  console.log(smurfs);
   return (
     <div>
       <h3>Lots of Smurfs!</h3>
       {smurfs.map((curr, index) => {
         return (
           <div key={index}>
-            <SmurfCard curr={curr} />
+            <SmurfCard
+              curr={curr}
+              deleteSmurf={deleteSmurf}
+              getSmurfs={getSmurfs}
+            />
           </div>
         );
       })}
@@ -28,4 +31,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { getSmurfs })(Smurfs);
+export default connect(mapStateToProps, { getSmurfs, deleteSmurf })(Smurfs);
