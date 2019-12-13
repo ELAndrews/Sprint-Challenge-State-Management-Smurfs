@@ -6,7 +6,6 @@ export const getSmurfs = () => dispatch => {
     .get("http://localhost:3333/smurfs")
     .then(response => {
       const smurfs = response.data;
-      console.log(smurfs);
       dispatch({ type: types.SET_SMURFS, payload: smurfs });
     })
     .catch(error => {
