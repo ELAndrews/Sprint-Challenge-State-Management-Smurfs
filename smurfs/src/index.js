@@ -8,7 +8,8 @@ import { Provider } from "react-redux";
 import * as reducers from "./state/reducers";
 
 const mainReducer = combineReducers({
-  smurfs: reducers.smurfsReducer
+  smurfs: reducers.smurfsReducer,
+  form: reducers.formReducer
 });
 
 const store = createStore(

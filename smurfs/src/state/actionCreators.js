@@ -13,3 +13,11 @@ export const getSmurfs = () => dispatch => {
       debugger;
     });
 };
+
+export const submit = () => {
+  return { type: types.SUBMIT };
+};
+
+export const inputChange = (name, value) => {
+  return { type: types.INPUT_CHANGE, payload: { name, value } };
+};
